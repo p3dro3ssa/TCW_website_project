@@ -1,0 +1,228 @@
+/* RESET: Ensure padding/borders don't increase element width (Box Model Requirement) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Univers;
+    background-color: #1a1a1a; /* Dark background for space vibe */
+    color: #ffffff;
+}
+@font-face {
+  font-family: Univers; /* set name */
+  src: url(/fonts/Univers-LightUltraCondensed.otf); /* url of the font */
+}
+
+/* --- HERO SECTION STYLES --- */
+
+.hero-section {
+    /* LAYOUT: Using Flexbox to center content vertically and horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center;     /* Centers horizontally */
+    
+    /* ATTRIBUTES: Full viewport height so it covers the whole screen */
+    height: 100vh; 
+    
+    /* STYLING: Adding a space-themed background */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://jedi-bibliothek.de/blog/wp-content/uploads/2021/02/9781787737167.jpg');
+    background-size: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 20px;
+    text-size-adjust: inherit; /* Internal spacing (Box Model) */
+}
+
+.main-title {
+    font-size: 5.5rem;
+    color: #FFE81F; /* Iconic Star Wars Yellow */
+    margin-bottom: 1rem; /* Spacing below the title */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    max-width: 800px; /* Prevents text from stretching too wide */
+    line-height: 2.5;
+}
+
+/* LINK STYLING: Making the <a> tag look like a button */
+.btn-primary {
+    align-self: center;
+    display: inline-block; /* Allows setting width/height/padding */
+    padding: 12px 24px; /* Box Model: Padding inside the button */
+    background-color: #FFE81F;
+    color: #000;
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* PSEUDO-CLASS: Hover state for the button */
+.btn-primary:hover {
+    background-color: #fff;
+}
+
+/* --- RESPONSIVITY (Mobile First) --- */
+/* MEDIA QUERY: This ruleset applies ONLY when screen is wider than 768px (Tablets/Desktops) */
+
+/* --- GENERAL SECTION STYLES --- */
+.container {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the container on the screen */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FFE81F;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #333; /* Visual divider */
+    padding-bottom: 10px;
+}
+
+/* --- GRID SYSTEM (The Character Cards) --- */
+.character-grid {
+    display: grid;
+    /* MAGIC FORMULA FOR RESPONSIVENESS: */
+    /* This automatically creates as many columns as will fit. */
+    /* Minimum column width is 300px, otherwise it stretches (1fr). */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Space between grid items */
+    margin-bottom: 60px;
+}
+
+.card {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image respects border radius */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    border-color: #FFE81F;
+}
+
+.card-img {
+    width: 400px;
+    height: auto;
+    object-fit: center; /* Ensures image doesn't stretch weirdly */
+}
+
+.card-content {
+    padding: 20px; 
+}
+
+.stats-list {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.stats-list li {
+    margin-bottom: 5px;
+}
+
+/* --- TABLE STYLING --- */
+.table-container {
+    overflow-x: auto; /* Allows table to scroll sideways on small mobile screens */
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders between cells */
+    margin-top: 20px;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-align: left;
+}
+
+/* Styling the Header Row */
+.data-table th {
+    background-color: #FFE81F;
+    color: #000;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Styling the Body Rows */
+.data-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #444;
+}
+
+/* PSEUDO-CLASS: Zebra Striping */
+/* Targets every even row (2, 4, 6...) */
+.data-table tr:nth-child(even) {
+    background-color: #333;
+}
+@media (min-width: 768px) {
+    .main-title {
+        font-size: 4rem; /* Bigger text for bigger screens */
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+    }
+}
+/* --- NAVIGATION BAR --- */
+.main-navbar {
+    display: flex; /* Flexbox to arrange Logo and Links side-by-side */
+    justify-content: space-between; /* Pushes Logo to left, Links to right */
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #000;
+    position: sticky; /* Keeps navbar at top when scrolling */
+    top: 0;
+    z-index: 100; /* Ensures navbar stays on top of other content */
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFE81F;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none; /* Removes bullet points */
+    display: flex;    /* Flexbox to make list items horizontal */
+    gap: 30px;        /* Spacing between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FFE81F;
+}
+
+/* Special style for the 'Enlist' button in the menu */
+.nav-cta {
+    border: 1px solid #FFE81F;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.nav-cta:hover {
+    background-color: #FFE81F;
+    color: #000 !important;
+}
