@@ -10,7 +10,7 @@ body {
 }
 @font-face {
   font-family: Univers;
-  src: url(../fonts/Univers-LightUltraCondensed.otf); 
+  src: url(/fonts/Univers-LightUltraCondensed.otf); 
 }
 
 
