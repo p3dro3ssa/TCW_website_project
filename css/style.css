@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> moje-zmiany
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,23 +5,10 @@
 }
 
 body {
-<<<<<<< HEAD
-    font-family: Univers;
-=======
->>>>>>> moje-zmiany
     background-color: #1a1a1a; 
     color: #ffffff;
 }
 @font-face {
-<<<<<<< HEAD
-  font-family: Univers; /* set name */
-  src: url(/fonts/Univers-LightUltraCondensed.otf); 
-}
-
-
-
-.header-section {
-=======
   font-family: Univers;
   src: url(../fonts/Univers-LightUltraCondensed.otf); 
 }
@@ -33,7 +16,6 @@ body {
 
 .header-section {
     font-family: Univers;
->>>>>>> moje-zmiany
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,12 +68,9 @@ body {
     line-height: 2.5;
 }
 .btn-primary {
-<<<<<<< HEAD
-=======
     font-size: 1.5rem;
     height: auto;
     width: auto;
->>>>>>> moje-zmiany
     align-self: center;
     display: inline-block;
     padding: 12px 24px; 
@@ -100,12 +79,6 @@ body {
     text-decoration: none; 
     font-weight: bold;
     border-radius: 5px;
-<<<<<<< HEAD
-    transition: background-color 0.3s ease; 
-}
-.btn-primary:hover {
-    background-color: #fff;
-=======
     transition: background-color 0.3s ease;
     margin: 10px; 
     transition: transform 0.3s ease;
@@ -114,7 +87,6 @@ body {
     background-color: #fff;
     transform: translateY(-5px);
 
->>>>>>> moje-zmiany
 }
 .container {
     padding: 60px 20px;
@@ -211,11 +183,8 @@ body {
 }*/
 
 .main-navbar {
-<<<<<<< HEAD
-=======
     width: 100%;
     height: 70px;
->>>>>>> moje-zmiany
     display: flex; 
     justify-content: space-between; 
     align-items: center;
@@ -396,8 +365,4 @@ body {
     .events-grid {
         flex-direction: column; 
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> moje-zmiany
